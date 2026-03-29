@@ -8,6 +8,9 @@
 #
 # Uncomment only what your selected services actually need.
 
+# MCP server (required for agent console)
+fastmcp
+
 # blake3
 # beautifulsoup4
 # chromadb

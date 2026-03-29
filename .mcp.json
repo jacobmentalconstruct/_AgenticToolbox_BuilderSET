@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "agentic-toolbox": {
+      "command": "python",
+      "args": [
+        "C:/Users/jacob/Documents/_AppDesign/_LivePROJECTS/_AgenticToolboxBuilderSET/src/mcp/server.py"
+      ],
+      "type": "stdio"
+    }
+  }
+}
