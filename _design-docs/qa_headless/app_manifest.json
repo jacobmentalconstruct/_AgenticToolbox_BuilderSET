@@ -1,7 +1,7 @@
 {
   "app_id": "app_9d6e1dbc02318ce18d28dbe7",
   "name": "QA Headless",
-  "destination": "C:\\Users\\jacob\\Documents\\_UsefulHelperSCRIPTS\\_MicroserviceLIBRARY\\_design-docs\\qa_headless",
+  "destination": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\_design-docs\\qa_headless",
   "vendor_mode": "module_ref",
   "resolution_profile": "app_ready",
   "ui_pack": "headless_pack",
