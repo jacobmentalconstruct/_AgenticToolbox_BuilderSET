@@ -10,6 +10,6 @@ if exist ".venv\Scripts\python.exe" (
     set "PYTHON_EXE=python"
 )
 
-echo [run] Launching Library Librarian UI
-"%PYTHON_EXE%" -m library.app_factory launch-ui
+echo [run] Launching AgenticToolboxBuilder UI
+"%PYTHON_EXE%" src/app.py ui
 exit /b %errorlevel%
