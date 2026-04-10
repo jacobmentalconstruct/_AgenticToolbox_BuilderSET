@@ -1,0 +1,24 @@
+{
+  "app_id": "app_8e774ef74ee139f0f522d2b5",
+  "name": "CASStack",
+  "destination": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\_sandbox\\apps\\cas_stack_20260329\\working",
+  "vendor_mode": "module_ref",
+  "resolution_profile": "app_ready",
+  "ui_pack": "headless_pack",
+  "orchestrator": "headless_backend_orchestrator",
+  "manager_layers": [
+    "storage"
+  ],
+  "microservices": [
+    "Blake3HashMS",
+    "MerkleRootMS",
+    "TemporalChainMS",
+    "VerbatimStoreMS"
+  ],
+  "modules": [],
+  "settings_defaults": {
+    "app_title": "CASStack",
+    "assistant_enabled": false
+  },
+  "hooks": {}
+}

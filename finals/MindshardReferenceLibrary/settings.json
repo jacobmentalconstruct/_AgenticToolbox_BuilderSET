@@ -1,0 +1,19 @@
+{
+  "canonical_import_root": "vendor",
+  "compat_paths": [
+    "vendor",
+    "vendor/library",
+    "vendor/library/microservices/grouped",
+    "vendor/library/microservices/structure"
+  ],
+  "vendor_mode": "static",
+  "ui_pack": "headless_pack",
+  "app_title": "MindshardReferenceLibrary",
+  "reference_library_root": "~/.mindshard_reference_library",
+  "assistant": {
+    "enabled": false,
+    "provider": "",
+    "model_name": ""
+  }
+}
+

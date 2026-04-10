@@ -1,0 +1,9 @@
+{
+  "ui_pack": "headless_pack",
+  "views": [],
+  "notes": [
+    "MindshardReferenceLibrary v1 ships as a headless packaged tool.",
+    "Build a UI client later over the same Python and MCP contracts."
+  ]
+}
+

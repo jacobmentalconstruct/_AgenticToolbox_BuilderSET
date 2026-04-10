@@ -1,0 +1,20 @@
+{
+  "app_id": "app_ec6e7f97a7bba2ff4729b5af",
+  "name": "KnowledgeCartridgeBuilder",
+  "destination": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\_sandbox\\apps\\knowledge_cartridge_20260329\\base",
+  "vendor_mode": "module_ref",
+  "resolution_profile": "app_ready",
+  "ui_pack": "headless_pack",
+  "orchestrator": "headless_backend_orchestrator",
+  "manager_layers": [],
+  "microservices": [
+    "IngestEngineMS",
+    "SemanticChunkerMS"
+  ],
+  "modules": [],
+  "settings_defaults": {
+    "app_title": "KnowledgeCartridgeBuilder",
+    "assistant_enabled": false
+  },
+  "hooks": {}
+}

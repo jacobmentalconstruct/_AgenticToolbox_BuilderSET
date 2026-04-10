@@ -1,0 +1,36 @@
+{
+  "app_id": "app_mindshard_reference_library_001",
+  "name": "MindshardReferenceLibrary",
+  "vendor_mode": "static",
+  "resolution_profile": "agent_tool_ready",
+  "ui_pack": "headless_pack",
+  "orchestrator": "headless_backend_orchestrator",
+  "manager_layers": [
+    "storage",
+    "reference",
+    "tooling"
+  ],
+  "microservices": [
+    "MindshardReferenceLibraryService",
+    "Blake3HashMS",
+    "TemporalChainMS",
+    "ReferencePythonAstChunkerMS",
+    "ReferenceProseChunkerMS",
+    "ReferenceTreeSitterProvider",
+    "ReferenceTreeSitterStrategyMS",
+    "ReferenceTreeSitterQueryRegistryMS",
+    "ReferenceLanguageTierMS"
+  ],
+  "modules": [
+    "lib.reference_service",
+    "lib.reference_sessions",
+    "src.core.reference_library.service",
+    "src.core.reference_library.store",
+    "src.core.reference_library.providers"
+  ],
+  "settings_defaults": {
+    "app_title": "MindshardReferenceLibrary",
+    "assistant_enabled": false
+  },
+  "hooks": {}
+}

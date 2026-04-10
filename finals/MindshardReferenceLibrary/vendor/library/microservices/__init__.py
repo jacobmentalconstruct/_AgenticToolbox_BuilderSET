@@ -1,0 +1,1 @@
+"""Vendored microservices package."""

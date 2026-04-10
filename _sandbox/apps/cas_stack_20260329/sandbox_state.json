@@ -1,0 +1,14 @@
+{
+  "version": "0.1.0",
+  "run_id": "cas_stack_20260329",
+  "workspace_root": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\_sandbox\\apps\\cas_stack_20260329",
+  "base_app_dir": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\_sandbox\\apps\\cas_stack_20260329\\base",
+  "working_app_dir": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\_sandbox\\apps\\cas_stack_20260329\\working",
+  "workspace_patch_dir": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\_sandbox\\apps\\cas_stack_20260329\\patches",
+  "workspace_report_dir": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\_sandbox\\apps\\cas_stack_20260329\\reports",
+  "app_patch_dir": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\_sandbox\\apps\\cas_stack_20260329\\working\\.app_factory\\patches",
+  "app_report_dir": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\_sandbox\\apps\\cas_stack_20260329\\working\\.app_factory\\reports",
+  "template_id": "storage_layer_lab",
+  "source_manifest_path": "",
+  "last_promotion_destination": ""
+}

@@ -1,0 +1,9 @@
+{
+  "extraPaths": [
+    "vendor",
+    "vendor/library",
+    "vendor/library/managers",
+    "vendor/library/orchestrators",
+    "vendor/library/microservices/grouped"
+  ]
+}

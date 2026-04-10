@@ -1,0 +1,16 @@
+{
+  "include": [
+    "app.py",
+    "backend.py",
+    "mcp_server.py",
+    "smoke_test.py",
+    "lib"
+  ],
+  "exclude": [
+    "**/__pycache__",
+    "vendor"
+  ],
+  "pythonVersion": "3.11",
+  "typeCheckingMode": "basic"
+}
+

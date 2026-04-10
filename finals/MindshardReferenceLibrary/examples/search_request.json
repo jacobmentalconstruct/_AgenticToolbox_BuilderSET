@@ -1,0 +1,10 @@
+{
+  "tool": "library_search",
+  "arguments": {
+    "query": "how excerpt caching works",
+    "scope": "attached",
+    "project_path": "C:/path/to/project",
+    "limit": 5
+  }
+}
+

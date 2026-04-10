@@ -1,0 +1,194 @@
+{
+  "manifest_version": "1.0",
+  "name": "MindshardReferenceLibrary",
+  "version": "1.0.0",
+  "description": "Standalone adapter-first reference-library tool with a self-contained global store, immutable revisions, attached-scope browsing, and revision-pinned excerpt reads.",
+  "portable_project": true,
+  "vendor_mode": "static",
+  "mcp_entrypoint": "mcp_server.py",
+  "self_test_entrypoint": "smoke_test.py",
+  "test_entrypoint": "python -m unittest discover -s tests -v",
+  "human_guide": "README.md",
+  "protocol_guide": "CONTRACT.md",
+  "vendoring_guide": "VENDORING.md",
+  "storage": {
+    "library_root": "~/.mindshard_reference_library",
+    "library_files": [
+      "library_manifest.json",
+      "providers_manifest.json",
+      "library_index.sqlite3",
+      "operations.jsonl"
+    ],
+    "content_dirs": [
+      "content/text",
+      "content/blobs",
+      "records/nodes",
+      "records/revisions",
+      "records/temporal_chain.sqlite3",
+      "exports"
+    ],
+    "project_attachment_file": ".mindshard/state/reference_library_attachments.json",
+    "session_tables": [
+      "library_usage",
+      "library_excerpt_cache"
+    ],
+    "evidence_store": ".mindshard/evidence/evidence.sqlite3"
+  },
+  "deduplication": {
+    "mode": "content_addressed_storage",
+    "hash_service": "Blake3HashMS",
+    "hash_note": "Uses SHA-256 as the stdlib-compatible implementation when native blake3 is unavailable.",
+    "scopes": [
+      "whole-payload text dedupe",
+      "whole-payload blob dedupe",
+      "stable operation_id for idempotent excerpt retries"
+    ]
+  },
+  "provider_contracts": {
+    "request_type": "provider_request",
+    "result_type": "provider_result",
+    "section_type": "provider_section",
+    "provider_kinds": [
+      "python_provider",
+      "microservice_provider"
+    ],
+    "selection_order": [
+      "tree_splitter provider for supported code/script/markup",
+      "peg_document-style prose provider",
+      "fallback_chunker for readable text",
+      "blob import for unsupported binaries"
+    ],
+    "runtime_notes": [
+      "tree_sitter_reference_provider is optional and is enabled only when its runtime is available",
+      "built-in provider manifests are reconciled to packaged defaults at startup",
+      "dict-shaped provider results are normalized into ProviderSection objects before store import"
+    ]
+  },
+  "tools": [
+    {
+      "tool_name": "library_manifest",
+      "category": "meta",
+      "side_effects": []
+    },
+    {
+      "tool_name": "library_import",
+      "category": "admin",
+      "side_effects": [
+        "global library writes",
+        "optional project attachment write"
+      ]
+    },
+    {
+      "tool_name": "library_refresh",
+      "category": "admin",
+      "side_effects": [
+        "new immutable revision"
+      ]
+    },
+    {
+      "tool_name": "library_archive",
+      "category": "admin",
+      "side_effects": [
+        "node tombstone flag"
+      ]
+    },
+    {
+      "tool_name": "library_rename",
+      "category": "admin",
+      "side_effects": [
+        "node metadata update"
+      ]
+    },
+    {
+      "tool_name": "library_move",
+      "category": "admin",
+      "side_effects": [
+        "hierarchy metadata update"
+      ]
+    },
+    {
+      "tool_name": "library_attach",
+      "category": "scope",
+      "side_effects": [
+        "project attachment file write"
+      ]
+    },
+    {
+      "tool_name": "library_detach",
+      "category": "scope",
+      "side_effects": [
+        "project attachment file write"
+      ]
+    },
+    {
+      "tool_name": "library_list_roots",
+      "category": "browse",
+      "side_effects": [],
+      "notes": [
+        "Defaults to attached scope.",
+        "Provide project_path for attached scope or scope=global for whole-library browse."
+      ]
+    },
+    {
+      "tool_name": "library_list_children",
+      "category": "browse",
+      "side_effects": [],
+      "notes": [
+        "Defaults to attached scope.",
+        "Provide project_path for attached scope or scope=global for whole-library browse."
+      ]
+    },
+    {
+      "tool_name": "library_search",
+      "category": "search",
+      "side_effects": [],
+      "notes": [
+        "Defaults to attached-scope search.",
+        "Provide project_path for attached scope or use scope=global for whole-library search."
+      ]
+    },
+    {
+      "tool_name": "library_get_detail",
+      "category": "read",
+      "side_effects": [],
+      "notes": [
+        "Defaults to attached scope.",
+        "Provide project_path for attached scope or scope=global for whole-library detail reads."
+      ]
+    },
+    {
+      "tool_name": "library_list_revisions",
+      "category": "history",
+      "side_effects": [],
+      "notes": [
+        "Defaults to attached scope.",
+        "Provide project_path for attached scope or scope=global for whole-library revision history."
+      ]
+    },
+    {
+      "tool_name": "library_read_excerpt",
+      "category": "read",
+      "side_effects": [
+        "operation ledger write",
+        "optional session usage write",
+        "optional session excerpt cache write",
+        "evidence mirror write"
+      ],
+      "guarantees": [
+        "stable operation_id for duplicate-safe retries",
+        "exact revision-pinned excerpt provenance"
+      ],
+      "notes": [
+        "Defaults to attached scope.",
+        "Provide project_path for attached scope or scope=global for whole-library excerpt reads."
+      ]
+    },
+    {
+      "tool_name": "library_export",
+      "category": "admin",
+      "side_effects": [
+        "export file write"
+      ]
+    }
+  ]
+}

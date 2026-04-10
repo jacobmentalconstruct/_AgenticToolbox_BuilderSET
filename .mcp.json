@@ -6,6 +6,20 @@
         "C:/Users/jacob/Documents/_AppDesign/_LivePROJECTS/_AgenticToolboxBuilderSET/src/mcp/server.py"
       ],
       "type": "stdio"
+    },
+    "cas-stack": {
+      "command": "python",
+      "args": [
+        "C:/Users/jacob/Documents/_AppDesign/_LivePROJECTS/_AgenticToolboxBuilderSET/_output/CASStack/mcp_server.py"
+      ],
+      "type": "stdio"
+    },
+    "knowledge-cartridge": {
+      "command": "python",
+      "args": [
+        "C:/Users/jacob/Documents/_AppDesign/_LivePROJECTS/_AgenticToolboxBuilderSET/_output/KnowledgeCartridgeBuilder/mcp_server.py"
+      ],
+      "type": "stdio"
     }
   }
 }

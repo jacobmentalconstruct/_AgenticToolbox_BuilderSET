@@ -1,0 +1,12 @@
+{
+  "tool": "library_import",
+  "arguments": {
+    "source_path": "C:/path/to/folder_or_file",
+    "project_path": "C:/path/to/project",
+    "attach": true,
+    "attachment_context": {
+      "reason": "manual_import"
+    }
+  }
+}
+

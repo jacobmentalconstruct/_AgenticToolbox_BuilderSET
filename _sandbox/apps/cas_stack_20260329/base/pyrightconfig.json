@@ -1,0 +1,19 @@
+{
+  "extraPaths": [
+    "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET",
+    "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\library",
+    "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\library\\managers",
+    "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\library\\orchestrators",
+    "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\library\\microservices\\core",
+    "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\library\\microservices\\db",
+    "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\library\\microservices\\grouped",
+    "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\library\\microservices\\meaning",
+    "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\library\\microservices\\observability",
+    "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\library\\microservices\\pipeline",
+    "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\library\\microservices\\reference",
+    "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\library\\microservices\\relation",
+    "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\library\\microservices\\storage",
+    "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\library\\microservices\\structure",
+    "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\library\\microservices\\ui"
+  ]
+}

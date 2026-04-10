@@ -1,0 +1,28 @@
+{
+  "app_id": "app_cas_static_001",
+  "name": "CASStack",
+  "vendor_mode": "static",
+  "resolution_profile": "app_ready",
+  "ui_pack": "headless_pack",
+  "orchestrator": "headless_backend_orchestrator",
+  "manager_layers": [
+    "manifold",
+    "relation",
+    "storage"
+  ],
+  "microservices": [
+    "Blake3HashMS",
+    "CrossLayerResolverMS",
+    "IdentityAnchorMS",
+    "MerkleRootMS",
+    "PropertyGraphMS",
+    "TemporalChainMS",
+    "VerbatimStoreMS"
+  ],
+  "modules": [],
+  "settings_defaults": {
+    "app_title": "CASStack",
+    "assistant_enabled": false
+  },
+  "hooks": {}
+}

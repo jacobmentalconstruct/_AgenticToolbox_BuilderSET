@@ -1,0 +1,28 @@
+{
+  "app_id": "app_kcb_static_001",
+  "name": "KnowledgeCartridgeBuilder",
+  "vendor_mode": "static",
+  "resolution_profile": "app_ready",
+  "ui_pack": "headless_pack",
+  "orchestrator": "headless_backend_orchestrator",
+  "manager_layers": [],
+  "microservices": [
+    "CartridgeServiceMS",
+    "ChunkingRouterMS",
+    "CodeChunkerMS",
+    "CodeGrapherMS",
+    "IngestEngineMS",
+    "PythonChunkerMS",
+    "RefineryServiceMS",
+    "ScoutMS",
+    "SearchEngineMS",
+    "TextChunkerMS",
+    "VectorFactoryMS"
+  ],
+  "modules": [],
+  "settings_defaults": {
+    "app_title": "KnowledgeCartridgeBuilder",
+    "assistant_enabled": false
+  },
+  "hooks": {}
+}

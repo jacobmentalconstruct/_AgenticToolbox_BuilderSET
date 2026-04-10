@@ -1,0 +1,11 @@
+{
+  "tool": "library_read_excerpt",
+  "arguments": {
+    "node_id": "node_xxx",
+    "revision_id": "revision_xxx",
+    "section_id": "request_xxx:section:1",
+    "project_path": "C:/path/to/project",
+    "session_db_path": "C:/path/to/session.sqlite3",
+    "session_id": "session_123"
+  }
+}

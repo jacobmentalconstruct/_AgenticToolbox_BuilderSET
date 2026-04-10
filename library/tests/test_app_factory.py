@@ -8,6 +8,7 @@ import unittest
 from unittest import mock
 from pathlib import Path
 
+from library.app_factory.assistant import AssistantLoopRegistry, AssistantLoopRunner
 from library.app_factory.catalog import CatalogBuilder, stable_id
 from library.app_factory.constants import canonicalize_sandbox_path
 from library.app_factory.models import AppBlueprintManifest
@@ -120,6 +121,56 @@ class AppFactoryIntegrationTests(unittest.TestCase):
         self.assertEqual(ui_template["ui_pack"], "tkinter_base_pack")
         self.assertEqual(ui_template["template_id"], "ui_explorer_workbench")
         self.assertTrue(self.query.validate_manifest(ui_template)["ok"])
+
+    def test_assistant_loop_registry_loads_builtin_loops(self):
+        registry = AssistantLoopRegistry()
+        loop_ids = {item["loop_id"] for item in registry.list_loops()}
+        self.assertIn("direct_chat", loop_ids)
+        self.assertIn("library_investigation", loop_ids)
+        self.assertIn("blueprint_advisor", loop_ids)
+
+    def test_assistant_loop_runner_grounded_service_investigation(self):
+        registry = AssistantLoopRegistry()
+        runner = AssistantLoopRunner(self.query)
+        loop = registry.get_loop("library_investigation")
+        self.assertIsNotNone(loop)
+
+        report = runner.run_loop(
+            loop_spec=loop,
+            user_prompt="explorer widget ui",
+            model_name="",
+            selected_service=None,
+            chat_history=[],
+        )
+
+        self.assertEqual(report["active_service_identifier"], "ExplorerWidgetMS")
+        self.assertEqual(report["steps"]["service_detail"]["class_name"], "ExplorerWidgetMS")
+        self.assertTrue(report["steps"]["dependency_report"]["runtime_dependencies"])
+        self.assertIn("Top match: ExplorerWidgetMS", report["assistant_output"])
+
+    def test_assistant_loop_registry_imports_external_json(self):
+        registry = AssistantLoopRegistry()
+        loop_path = self.temp_root / "custom_loops.json"
+        loop_path.write_text(
+            json.dumps(
+                {
+                    "loops": [
+                        {
+                            "loop_id": "custom_probe",
+                            "name": "Custom Probe",
+                            "description": "Custom external loop",
+                            "steps": [],
+                        }
+                    ]
+                },
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
+
+        report = registry.import_loop_file(loop_path)
+        self.assertTrue(report["ok"])
+        self.assertEqual(registry.get_loop("custom_probe")["name"], "Custom Probe")
 
     def test_template_blueprint_stamps_successfully(self):
         app_dir = self._app_dir("template_stamp_app")

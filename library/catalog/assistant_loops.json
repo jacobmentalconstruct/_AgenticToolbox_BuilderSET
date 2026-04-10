@@ -1,0 +1,71 @@
+{
+  "loops": [
+    {
+      "loop_id": "direct_chat",
+      "name": "Direct Chat",
+      "description": "Plain session chat with optional selected-service grounding.",
+      "system_prompt": "You are helping a developer reason about a local microservice library. Prefer grounded answers over speculation.",
+      "final_prompt": "User request:\n{{user_prompt}}\n\nSelected service context:\n{{selected_service.pretty_json|selected_service_json}}",
+      "window_messages": 10,
+      "steps": []
+    },
+    {
+      "loop_id": "library_investigation",
+      "name": "Library Investigation",
+      "description": "Search the catalog, pick the best service match, inspect it, then inspect dependencies before answering.",
+      "system_prompt": "You are a grounded library operator. Use the supplied catalog evidence and explicitly mention when the library search was ambiguous.",
+      "window_messages": 8,
+      "steps": [
+        {
+          "id": "service_search",
+          "kind": "tool",
+          "tool": "search_services",
+          "title": "Search catalog for matching services",
+          "query": "{{user_prompt}}",
+          "limit": 6
+        },
+        {
+          "id": "service_detail",
+          "kind": "tool",
+          "tool": "describe_service",
+          "title": "Inspect the active service",
+          "service": "{{active_service_identifier}}"
+        },
+        {
+          "id": "dependency_report",
+          "kind": "tool",
+          "tool": "show_dependencies",
+          "title": "Inspect active-service dependencies",
+          "service": "{{active_service_identifier}}"
+        }
+      ],
+      "final_prompt": "User request (summarized — do NOT repeat it back):\n{{user_prompt}}\n\nActive service:\n{{active_service_identifier}}\n\nSearch results:\n{{steps.service_search.pretty_json}}\n\nService detail:\n{{steps.service_detail.pretty_json}}\n\nDependencies:\n{{steps.dependency_report.pretty_json}}\n\nAnswer concisely with concrete findings from the catalog. If there was no strong service match, say that plainly. Do NOT echo or restate the user's request."
+    },
+    {
+      "loop_id": "blueprint_advisor",
+      "name": "Blueprint Advisor",
+      "description": "Search services, then produce a starter blueprint recommendation grounded in the current catalog.",
+      "system_prompt": "You are recommending practical starter blueprints for this local library. Keep the recommendation concrete and explain why the selected services belong together.",
+      "window_messages": 6,
+      "steps": [
+        {
+          "id": "service_search",
+          "kind": "tool",
+          "tool": "search_services",
+          "title": "Search for candidate services",
+          "query": "{{user_prompt}}",
+          "limit": 5
+        },
+        {
+          "id": "recommended_blueprint",
+          "kind": "tool",
+          "tool": "recommend_blueprint",
+          "title": "Build a starter blueprint from the active service",
+          "services": "{{active_service_identifier}}",
+          "name": "Operator Draft"
+        }
+      ],
+      "final_prompt": "User request (summarized — do NOT repeat it back):\n{{user_prompt}}\n\nActive service:\n{{active_service_identifier}}\n\nSearch results:\n{{steps.service_search.pretty_json}}\n\nRecommended blueprint:\n{{steps.recommended_blueprint.pretty_json}}\n\nRespond with a concise numbered list of recommended library components. For each, give the service name and one sentence on why it fits. Then briefly call out assumptions and any obvious services that might need to be added. Do NOT echo or restate the user's request."
+    }
+  ]
+}

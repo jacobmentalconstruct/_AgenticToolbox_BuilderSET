@@ -1,0 +1,68 @@
+{
+  "locked_blueprint_hash": "3bf8bd42c785cfe78525c7797bd56786f9cc1ae167c49d00267d7ce38f2f2f29",
+  "catalog_build_id": "build_5c9bf4dc0a142f8276dc0810",
+  "vendor_mode": "module_ref",
+  "resolved_library_artifacts": [
+    {
+      "artifact_id": "artifact_6940290352ffcc1480562ca9",
+      "source_path": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\library\\microservices\\grouped\\storage_group.py",
+      "target_path": "",
+      "file_cid": "0dee7a9f83d1aa99ee273b9caf263de8d0578b1279c3f989e1fc143c4bc242f1",
+      "materialization_mode": "module_ref",
+      "import_key": "library.microservices.grouped.storage_group",
+      "class_name": "Blake3HashMS",
+      "service_name": "Blake3HashMS"
+    },
+    {
+      "artifact_id": "artifact_948d48e299f0eef72582d59c",
+      "source_path": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\library\\microservice_std_lib.py",
+      "target_path": "",
+      "file_cid": "b78a392838eda00a11a3ae26cfb090a52ace554493627f7493e5d2e4de47861c",
+      "materialization_mode": "module_ref",
+      "import_key": "library.microservice_std_lib",
+      "class_name": "",
+      "service_name": ""
+    }
+  ],
+  "generated_python_files": [
+    {
+      "path": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\_sandbox\\apps\\cas_stack_20260329\\working\\app.py",
+      "sha256": "7430b7dde805c304cd0a88e750bc3ca06f793fa8728cb351ecd78487627bb4e7"
+    },
+    {
+      "path": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\_sandbox\\apps\\cas_stack_20260329\\working\\backend.py",
+      "sha256": "c35c6d820593f331f815141f65b4bc517f52d55ba4a65e6eff9b9bd87394fee3"
+    },
+    {
+      "path": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\_sandbox\\apps\\cas_stack_20260329\\working\\ui.py",
+      "sha256": "2cf99d8e88cb07058e13a1e66f401fc031986d6724e0a3e646672bd83ac3206d"
+    }
+  ],
+  "generated_support_files": [
+    {
+      "path": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\_sandbox\\apps\\cas_stack_20260329\\working\\requirements.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\_sandbox\\apps\\cas_stack_20260329\\working\\pyrightconfig.json",
+      "sha256": "cdc579ccd8b8b5ff2aa5a35ab1532e2df32f76a05d7a6e4f73743829308f1180"
+    },
+    {
+      "path": "C:\\Users\\jacob\\Documents\\_AppDesign\\_LivePROJECTS\\_AgenticToolboxBuilderSET\\_sandbox\\apps\\cas_stack_20260329\\working\\.env",
+      "sha256": "da458381857f00f1c887094d3af043118412670206b19f9e807cc8a06b8eb91b"
+    }
+  ],
+  "external_dependencies": [],
+  "integrity_scope": {
+    "included": [
+      "generated_python_files",
+      "generated_support_files",
+      "resolved_library_artifacts"
+    ],
+    "excluded": [
+      "ui_schema.json",
+      "settings.json"
+    ]
+  },
+  "ui_schema_snapshot_hash": "a7f24b35191aa45ab412358a1cdba8c6e9db0ffecda3edf5be23b591e7ad00d7"
+}

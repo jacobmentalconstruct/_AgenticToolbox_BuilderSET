@@ -1,0 +1,1 @@
+"""Vendored structure microservices."""

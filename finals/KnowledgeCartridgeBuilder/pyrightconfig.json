@@ -1,0 +1,12 @@
+{
+  "extraPaths": [
+    "vendor",
+    "vendor/library",
+    "vendor/library/microservices/storage",
+    "vendor/library/microservices/structure",
+    "vendor/library/microservices/relation",
+    "vendor/library/microservices/pipeline",
+    "vendor/library/microservices/core",
+    "vendor/library/microservices/meaning"
+  ]
+}

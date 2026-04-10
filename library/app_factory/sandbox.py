@@ -539,7 +539,7 @@ class SandboxWorkflow:
         command = [sys.executable, str(self.patcher_script), mode, str(patch_manifest), "--root-dir", str(root_dir)]
         if mode == "apply" and backup:
             command.append("--backup")
-        result = subprocess.run(command, capture_output=True, text=True, timeout=240, check=False)
+        result = subprocess.run(command, capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=240, check=False)
         payload: Dict[str, Any]
         stdout = result.stdout.strip()
         if stdout:
@@ -560,7 +560,7 @@ class SandboxWorkflow:
 
     def _run_app_command(self, app_dir: Path, *args: str) -> Dict[str, Any]:
         command = [sys.executable, "app.py", *args]
-        result = subprocess.run(command, cwd=app_dir, capture_output=True, text=True, timeout=240, check=False)
+        result = subprocess.run(command, cwd=app_dir, capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=240, check=False)
         stdout = result.stdout.strip()
         payload: Any = stdout
         if stdout:
